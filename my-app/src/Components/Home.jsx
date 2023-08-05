@@ -12,7 +12,7 @@ const Home = () => {
       Tic Tac Toe
     </div>
     <div className='body-item'>
-      <img  className='home-img'src='https://www.thegreatapps.com/application/upload/Apps/2016/07/tic-tac-toe-with-chat-177.png'/>
+      <img  className='home-img'src='https://www.thegreatapps.com/application/upload/Apps/2016/07/tic-tac-toe-with-chat-177.png' alt='tictactoe image'/>
     </div>
     
     <div className='body-item'>

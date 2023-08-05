@@ -2,7 +2,6 @@ import React,{useEffect} from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
 import Login from './Components/Login';
 import Home from './Components/Home';
-import Header from './Components/Header';
 import Register from './Components/Register';
 import Verify from './Components/Verify';
 import toast,{Toaster} from 'react-hot-toast';

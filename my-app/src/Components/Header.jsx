@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { logout } from '../actions/UserActions';
-import { UseSelector, useSelector } from 'react-redux/es/hooks/useSelector';
+import {  useSelector } from 'react-redux/es/hooks/useSelector';
 import './Home.css';
 
 const Header = () => {

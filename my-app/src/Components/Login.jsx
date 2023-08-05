@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {login} from '../actions/UserActions';
 import toast,{Toaster } from "react-hot-toast";
-import Header from './Header';
 import './Authentication.css';
 
 
