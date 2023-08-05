@@ -5,10 +5,12 @@ import { server } from '../store';
 export const login =(email,password)=> async dispatch =>{
     try{
         dispatch({type:'loginRequest'});
+        console.log('running');
         const {data} =await axios.post(
-            `${server}/login`,
+            `https://tictac-toe-backend.onrender.com/api/v1/login`,
             {email,password}
         )
+        console.log('unning');
        if(!data.status){
         dispatch({type:'loginFail',payload:data.msg});
        }
