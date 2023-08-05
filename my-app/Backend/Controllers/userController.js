@@ -1,11 +1,12 @@
 import {User} from '../Models/userModel.js';
 import  {sendEmail}  from '../utils/sendEmail.js';
 import { sendToken } from '../utils/sendToken.js';
+import { catchAsyncError } from '../middlewares/catchAsyncError.js';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
 dotenv.config({path:'./Config/config.env'});
 
-export const register= async(req,res,next)=>{
+export const register= catchAsyncError(async(req,res,next)=>{
     try{
         // console.log('route is reachable');
         
@@ -52,9 +53,9 @@ export const register= async(req,res,next)=>{
     catch(error){
         return res.json({msg:error.message,status:false});
     }
-};
+});
 
-export const verify= async (req,res)=>{
+export const verify= catchAsyncError(async (req,res)=>{
     const {otp,userId}=req.body;
     console.log(userId);
     try{
@@ -79,9 +80,9 @@ export const verify= async (req,res)=>{
   } catch (error) {
     res.json({ success: false, msg: error.message });
   }
-};
+});
 
-export const login= async(req,res)=>{
+export const login= catchAsyncError(async(req,res)=>{
     const {email,password}=req.body;
     
         User.findOne({email}).then(user=>{
@@ -100,9 +101,9 @@ export const login= async(req,res)=>{
 });
       
     
-}
+});
 
-export const logout = async (req, res, next) => {
+export const logout = catchAsyncError(async (req, res, next) => {
   res
     .status(200)
     .cookie("token", null, {
@@ -115,5 +116,5 @@ export const logout = async (req, res, next) => {
       status: true,
       message: "Logged Out Successfully ",
     });
-};
+});
 
