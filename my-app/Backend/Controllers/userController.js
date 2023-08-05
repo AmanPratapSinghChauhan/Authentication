@@ -84,8 +84,9 @@ export const verify= catchAsyncError(async (req,res)=>{
 
 export const login= catchAsyncError(async(req,res)=>{
     const {email,password}=req.body;
+
     
-        User.findOne({email}).then(user=>{
+        await  User.findOne({email}).then(user=>{
         if(!user){
           return res.json({status:false,msg:'Incorrect Email or Password'});
         }
