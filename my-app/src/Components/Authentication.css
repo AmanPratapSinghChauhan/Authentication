@@ -1,0 +1,152 @@
+@import url(" https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swaprel");
+@media (max-width: 767px) {
+    .authenticate-form{
+        flex-direction: column;
+    }
+    .authenticate-left {
+      font-size: 25px;
+      width: 100%;
+    }
+  
+    .authenticate-right {
+      width: 100%;
+    }
+  }
+body{
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+body{
+    z-index: -10;
+    background-color:hsl(228, 26%, 96%);
+}
+.authenticate-form{
+    display: flex;
+    background-color: rgba(255,255,255,1);
+    border:2px solid hsl(0, 0%, 100%);
+    z-index: 10;
+    width:50%;
+    margin-left: 25%;
+    margin-top: 10%;
+    box-shadow: 2px;
+    align-items: center;
+    justify-content: center;
+}
+.authenticate-left{
+    max-width:100%;
+    flex: 1;
+    box-sizing: border-box;
+    background-color:rgb(83, 226, 231) ;
+    z-index: 100;
+    
+}
+.authenticate-left img{
+    width:auto;
+    padding: 10px 10px 10px 10px;
+}
+.authenticate-right{
+    width: auto;
+    flex: 1; 
+    text-align: center;
+    justify-content: center;
+}
+.form-item{
+    margin:auto;
+    padding:10px 10px 10px 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.form-item input{
+    width:100%;
+    height: 40px;
+    border: 1px solid #ccc;
+
+
+}
+.form-item input:focus{
+    outline: none; 
+    border-color: rgb(118, 222, 233); 
+}
+.form-item button{
+        height: 40px;
+        border-radius: 40px;
+        background: rgb(83, 226, 231);
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+        align-items: center;
+}
+.authenticate-referal{
+    font-weight: bold;
+}
+.referal-text{
+    color:rgb(83, 226, 231);
+}
+.register-left{
+    margin: 20% auto;
+    text-align: center;
+    justify-content: center;
+}
+.register-left span{
+    color: white;
+    font-size: 50px;
+    font-family: 'Edu SA Beginner', cursive;
+}
+
+
+
+
+
+
+
+/* Verify.jsx */
+.verify-box{
+    display: flex;
+    width:100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color:hsl(228, 26%, 96%);;
+}
+.verify-container{
+    background-color: rgba(255,255,255,1);
+    border:1px solid rgb(200, 204, 205);
+    padding:30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+}
+.verify-item{
+    margin:15px;
+}
+.verify-input{
+    width:100%;
+    height:40px;
+    border:1px solid rgb(200, 204, 205);
+}
+.verify-item input:focus{
+    border:1px solid rgb(83, 226, 231);
+}
+.verify-item button{
+    background-color: rgb(83, 226, 231) ;
+    border-radius: 30px;
+    border:0px;
+}
+
+/* Home.jsx */
+.empty{
+   height: 40px;
+}
+.tic-tac-toe {
+    background-image:url('https://th.bing.com/th/id/OIP.kIFl5iB2j7tlz-ss1dHnBQHaFy?pid=ImgDet&w=200&h=156&c=7&dpr=1.5') ;
+    height: 500px;
+    width:100%;
+}
+.snake{
+    background-image: url('https://th.bing.com/th/id/OIP.qCB6uNA28cO7W88GB73bzAHaEK?pid=ImgDet&rs=1');
+    height: 500px;
+    width: 100%;
+}
