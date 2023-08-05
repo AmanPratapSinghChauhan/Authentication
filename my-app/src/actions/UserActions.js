@@ -7,7 +7,7 @@ export const login =(email,password)=> async dispatch =>{
         dispatch({type:'loginRequest'});
         console.log('running');
         const {data} =await axios.post(
-            `https://tictac-toe-backend.onrender.com/api/v1/login`,
+            `${server}/login`,
             {email,password}
         )
         console.log('unning');
