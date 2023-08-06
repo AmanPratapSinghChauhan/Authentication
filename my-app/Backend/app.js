@@ -13,11 +13,15 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: 'https://tictac-toe-frontend-jddf.onrender.com',
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"],
+    methods: [ "POST"],
   })
 );
+
+app.options('*', cors({
+  origin: 'https://tictac-toe-frontend-jddf.onrender.com'
+}));
 
 
 app.use(cookieParser());
