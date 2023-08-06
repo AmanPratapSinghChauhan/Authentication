@@ -8,7 +8,13 @@ export const login =(email,password)=> async dispatch =>{
         console.log('running');
         const {data} =await axios.post(
             `${server}/login`,
-            {email,password}
+            {email,password},
+            {
+                headers: {
+                    'Content-type': 'application/json',
+                  },
+                   withCredentials: true,
+                }
         )
         console.log('unning');
        if(!data.status){
@@ -33,6 +39,12 @@ export const register= (name,email,password)=> async dispatch =>{
         dispatch({type:'registerRequest'});
         const {data}=await axios.post(`${server}/register`,
             {name,email,password},
+            {
+            headers: {
+                'Content-type': 'application/json',
+              },
+               withCredentials: true,
+            }
         )
         if(data.status){
             
@@ -56,7 +68,13 @@ export const verify=(otp,userId)=> async dispatch =>{
         dispatch ({type:'verificationRequest'});
         const {data}= await axios.post(`${server}/verify`,{
             otp,userId
-        });
+        },{
+            headers:{
+                  'Content-type':'application/json'
+            },
+                   withCredentials: true,
+        }
+        );
         if(!data.status){
             dispatch({type:'verificationFailure',payload:data.msg});
         }
@@ -76,7 +94,9 @@ export const verify=(otp,userId)=> async dispatch =>{
 export const logout=()=>async dispatch =>{
     try{
         dispatch({type:'logoutRequest'});
-        const {data}=await axios.post(`${server}/logout`);
+        const {data}=await axios.post(`${server}/logout`,{
+            withCredentials:true
+        });
         
         dispatch({type:'logoutSuccess',payload:data.message});
 

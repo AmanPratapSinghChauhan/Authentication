@@ -8,22 +8,16 @@ const app=express();
 dotenv.config({path:"./Config/config.env",});
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.json());
-const rigin=process.env.FRONTEND_URL;
 
 
 
-const allowedOrigins = ['https://tictac-toe-frontend-jddf.onrender.com','http://localhost:3000'];
-app.use(cors({
-  origin: (origin, callback) => {
-    if (allowedOrigins.includes(origin)) {
-      console.log('ok');
-      callback(null, true);
-    } else {
-      console.log('not ok ',origin);
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-}));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 
 app.use(cookieParser());
